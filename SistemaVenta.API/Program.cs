@@ -1,3 +1,4 @@
+using SistemaVenta.IOC;
 
 namespace SistemaVenta.API
 {
@@ -13,6 +14,8 @@ namespace SistemaVenta.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.InyectDependencies(builder.Configuration);
 
             var app = builder.Build();
 
